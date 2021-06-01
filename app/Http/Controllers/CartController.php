@@ -188,10 +188,7 @@ class CartController extends Controller
         if(Auth::user())
         {
         	$history = Transaksi::where('kd_pel', Auth::user()->kd_pel)->get();
-            $brng = TransaksiDetail::where([
-                ['kd_pel', Auth::user()->kd_pel],
-                ['kd_psnan',$history],
-            ])->get();
+            $brng = TransaksiDetail::where('kd_pel', Auth::user()->kd_pel)->where('kd_psnan', $history)->get();
         }
         return view('home.history',['history'=>$history,'brng'=>$brng]);
     }
