@@ -238,7 +238,7 @@
 		                           			</tr>
 		                           			<tr class="form-group">
 		                           				<th><label class="col-form-label">Jumlah</label></th>
-		                           				<td><input type="text" class="form-control" name="jumlah" required value="{{old('jumlah')}}" autocomplete="off"></td>	
+		                           				<td><input type="number" class="form-control" name="jumlah" required value="{{old('jumlah')}}" autocomplete="off"></td>	
 		                           			</tr>
 		                           		</table>
                            		</div>
