@@ -86,19 +86,21 @@
 		        	@endif
 		        	@if(!Auth::user())
 		        		<li class="nav-item dropdown">
-		              <a class="nav-link text-white" href="#" title="Login" id="navbarDropdown" data-toggle="dropdown">Login?</a>
-						    	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						    		<a class="dropdown-item" href="/login">Login</a>
-						    		<a class="dropdown-item" href="/create-daftar1">Register</a>
-						    		<div class="dropdown-divider"></div>
-						    		<a class="dropdown-item" href="/admin" target="_blank">Admin</a>
-						    	</div>
-								</li>
+		              		<a class="nav-link text-white" href="#" title="Login" id="navbarDropdown" data-toggle="dropdown">Login?</a>
+						    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						    	<a class="dropdown-item" href="/login">Login</a>
+						    	<a class="dropdown-item" href="/create-daftar1">Register</a>
+								<a class="dropdown-item" data-target="#new" data-toggle="modal" style="cursor: pointer;">What's new <span class="badge badge-danger">New</span></a>
+						    	<div class="dropdown-divider"></div>
+						    	<a class="dropdown-item" href="/admin" target="_blank">Admin</a>
+						    </>
+						</li>
 	                @else
 	                	<li class="nav-item dropdown">
 		                	<a class="nav-link text-white" href="#" title="{{Auth::user()->forename ?? ''}}" id="navbarDropdown" data-toggle="dropdown">{{Auth::user()->forename ?? ''}} <i class="fas fa-chevron-down"></i></a>
 					    	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					    		<a class="dropdown-item" href="/akun">Account</a>
+								<a class="dropdown-item" data-target="#new" data-toggle="modal" style="cursor: pointer;">What's new <span class="badge badge-danger">New</span></a>
 					    		<div class="dropdown-divider"></div>
 					    		<a class="dropdown-item" href="/logout2" onclick="return confirm('Anda yakin ingin logout?');">Logout</a>
 					    	</div>
@@ -109,6 +111,25 @@
 		 </div>
 	</nav>
 	<br><br>
+	{{-- Bagian  Modal--}}
+	<div class="modal fade" id="new" tabindex="-1" role="dialog" aria-labelledby="ModalNew" aria-hidden="true" > 
+        <div class="modal-dialog modal-lg" role="document">     
+            <div class="modal-content"> 
+                <div class="modal-header"> 
+                    <h5 class="modal-title" id="ModalNew">Information - New Update</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> 
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Dikarenakan database yang digunakan sebelumnya telah kedaluwarsa (expired), maka saya mengganti database 
+					dengan yang baru. Hal ini mengakibatkan transaksi dan akun yang telah terdaftar akan hilang.
+ 				</div>
+			    <div class="modal-footer"> 
+			    -Alfien Sukma Prawira   
+			    </div>
+            </div> 
+        </div> 
+    </div>
 	<!-- Bagian Judul -->
 	<h3>@yield('judul_halaman')</h3>
 	<!-- Bagian Konten -->
