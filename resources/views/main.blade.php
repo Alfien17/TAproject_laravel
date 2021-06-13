@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/fontawesome-free-5.15.3-web/css/all.min.css">
-    <title>Cireunfood.id</title>
+    <title>Cireunfood.id | Makanan Asli Cireundeu</title>
   </head>
   <body>
   	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">

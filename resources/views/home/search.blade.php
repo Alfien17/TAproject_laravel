@@ -22,7 +22,7 @@
 				    <h6 class="col-7 mt-auto">Rp. {{number_format((float)$b->harga)}}</h6>
 					<div>
 					    <button class="btn btn-primary" data-target="#view{{$b->no}}" data-toggle="modal" title="Lihat detail"><i class="far fa-eye"></i></button>
-					    <a href="/cart" class="btn btn-success" title="Tambahkan ke keranjang"><i class="fas fa-cart-plus"></i></a>
+					    <button class="btn btn-success" data-target="#cart{{$b->no}}" data-toggle="modal" title="Tambahkan ke keranjang"><i class="fas fa-cart-plus"></i></button>
 					</div>  
 				</div>
 			</div>
@@ -42,7 +42,7 @@
                            			<img style="height: 250px; width: 300px;" src="{{ url('/assets/goods/'.$b->img_brng) }}">
                            		</div>
                            		<div class="col-md-6">
-                           			<form method="post" action="/keranjang" enctype="multipart/form-data">
+                           			<form method="post" action="/addcart{{$b->no}}" enctype="multipart/form-data">
                            				{{ csrf_field() }}
 	                           			<table class="table table-borderless">
 		                           			<tr>
@@ -67,7 +67,7 @@
 		                           			</tr>
 		                           			<tr class="form-group">
 		                           				<th><label class="col-form-label">Jumlah</label></th>
-		                           				<td><input type="text" class="form-control" name="jumlah" required value="{{old('jumlah')}}" autocomplete="off"></td>	
+		                           				<td><input type="number" class="form-control" name="jumlah" required value="{{old('jumlah')}}" autocomplete="off"></td>	
 		                           			</tr>
 		                           		</table>
                            		</div>
@@ -77,6 +77,33 @@
                             <button type="button" class="btn btn-secondary" data-dismiss="modal" title="Batal">Batal</button> 
                             <button type="submit" class="btn btn-success" title="Tambahkan ke keranjang"><i class="fas fa-cart-plus"></i></button>
                         </div>
+                        </form> 
+                    </div> 
+                </div> 
+            </div>
+			<!-- Modal Cart -->
+			<div class="modal fade" id="cart{{$b->no}}" tabindex="-1" role="dialog" aria-labelledby="ModalBarang" aria-hidden="true" > 
+                <div class="modal-dialog modal-lg" role="document">     
+                    <div class="modal-content"> 
+                       	<div class="modal-header"> 
+                            <h5 class="modal-title" id="ModalBarang">Masukkan Keranjang</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> 
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                           <div class="row">
+                           		<form method="post" action="/addcart{{$b->no}}" enctype="multipart/form-data">
+                           			{{ csrf_field() }}
+ 									<div class="row ml-3">
+									  	<label class="form-label">Mau beli berapa?</label>
+									  	<input type="number" name="jumlah" class="form-control" placeholder="Masukkan disini" required value="{{old('jumlah')}}" autocomplete="off">
+									</div>
+ 							</div>
+ 						</div>
+			            <div class="modal-footer"> 
+			                <button type="button" class="btn btn-secondary" data-dismiss="modal" title="Batal">Batal</button> 
+			                <button type="submit" class="btn btn-success" title="Tambahkan ke keranjang"><i class="fas fa-cart-plus"></i></button>
+			            </div>
                         </form> 
                     </div> 
                 </div> 

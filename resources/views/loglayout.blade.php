@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/fontawesome-free-5.15.3-web/css/all.min.css">
-    <title>Login</title>
+    <title>Cireunfood.id | Login & Register</title>
   </head>
   <body class="bg-dark">
 	<section class="form my-4 mx-5">

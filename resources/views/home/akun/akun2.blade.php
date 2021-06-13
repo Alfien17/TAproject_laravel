@@ -40,6 +40,16 @@
             <label class="col-sm-7"><a href="/akun/editpass/{{Auth::user()->id ?? ''}}" class="label-control">Lupa password?</a></label>
         </div>
         <div class="row">
+            <label class="col-sm-2">NIK</label>
+            <label>:</label>
+            <label class="col-sm-7">{{Auth::user()->nik ?? ''}}</label>
+        </div>
+        <div class="row">
+            <label class="col-sm-2">Tanggal Lahir</label>
+            <label>:</label>
+            <label class="col-sm-7">{{Auth::user()->tgl_lahir ?? ''}}</label>
+        </div>
+        <div class="row">
             <label class="col-sm-2">Telepon</label>
             <label>:</label>
             <label class="col-sm-7">{{Auth::user()->telp ?? ''}}</label>

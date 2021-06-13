@@ -158,7 +158,8 @@ class MainController extends Controller
      public function searchprdk(Request $request){
         $search = $request->get('search');
         $barang = Barang::where('nm_brng','like','%'.$search.'%')->paginate(5);
-        return view('home.search',['barang'=>$barang],['search'=>$search]);
+        $jumlah_pesanan = TransaksiDetail::where('kd_pel', Auth::user()->kd_pel)->where('status', 'Sedang diproses')->count();
+        return view('home.search',['barang'=>$barang,'search'=>$search, 'jumlah_pesanan' => $jumlah_pesanan]);
     }
 
     // Akun

@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/fontawesome-free-5.15.3-web/css/all.min.css">
-    <title>Admin Perpus</title>
+    <title>Cireunfood.id | Admin</title>
   </head>
   <body>
   	@if(Session::has('berhasil'))

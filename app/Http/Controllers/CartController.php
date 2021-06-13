@@ -86,10 +86,10 @@ class CartController extends Controller
                 'total' => $harga_total,
             ]);
 
-            return redirect('/')->with('success', 'Data berhasil ditambahkan ke keranjang');
+            return redirect()->back()->with('success', 'Data berhasil ditambahkan ke keranjang');
         }
         else{
-            return redirect('/')->with('gagal', 'Barang yang akan dibeli tidak boleh kurang dari nol.');
+            return redirect()->back()->with('gagal', 'Barang yang akan dibeli tidak boleh kurang dari nol.');
         }
     }
         
