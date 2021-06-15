@@ -43,7 +43,7 @@
 	<h4 class="text-center m-4">Produk Terbaru</h4>
 	<div class="container">
 		<div class="row">
-			@foreach($barang as $b)
+			@forelse ($barang as $b)
 			<div class="card mr-2 ml-1 mb-3 card-trans" style="width: 17rem;">
 			  	<img style="height: 260px; width: 100%;"src="{{ url('/assets/goods/'.$b->img_brng) }}" class="card-img-top">
 			  	<div class="card-body">
@@ -143,14 +143,18 @@
                     </div> 
                 </div> 
             </div>
-			@endforeach
+			@empty
+			<div class="content mx-auto">
+				<div class="text text-center">Tidak ada produk terbaru.</div>
+			</div>
+			@endforelse
 		</div>
 		<div class="row m-3">
             {{ $barang->links() }}
 		</div>
 	</div>
 
-	<section id="ringan">
+	<section id="ringan"><br><br>
 	<h4 class="text-center m-4">Produk Makanan Ringan</h4>
 	<div class="container">
 		<div class="row">
@@ -260,7 +264,7 @@
 	</div>
 	</section>
 
-	<section id="pokok">
+	<section id="pokok"><br><br>
 	<h4 class="text-center m-4">Produk Makanan Pokok</h4>
 	<div class="container">
 		<div class="row">
