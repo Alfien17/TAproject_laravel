@@ -311,6 +311,8 @@ a.register:focus,input[type="submit"].login:focus{outline: none;}
 }
 .row .card:hover{
   box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+.row .card-trans:hover{
   transform: scale(1.02);
 }
 

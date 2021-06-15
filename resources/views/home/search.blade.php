@@ -13,7 +13,7 @@
 	<h4 class="text-center m-4">Produk yang Anda Cari</h4>
 	<div class="row">
 		@forelse ($barang as $b)
-		<div class="card mr-2 ml-1 mb-3" style="width: 17rem;">
+		<div class="card mr-2 ml-1 mb-3 card-trans" style="width: 17rem;">
 			<img style="height: 260px; width: 100%;"src="{{ url('/assets/goods/'.$b->img_brng) }}" class="card-img-top">
 			<div class="card-body">
 			    <h5 class="card-title">{{ucwords($b->nm_brng)}}</h5>

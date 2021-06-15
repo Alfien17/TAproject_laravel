@@ -122,7 +122,7 @@ class CartController extends Controller
 
     public function editcheckout($id){
     	$harga = Transaksi::where('kd_pel',Auth::user()->kd_pel)->where('status','Sedang diproses')->get();
-    	$jumlah_pesanan = TransaksiDetail::where('kd_pel',Auth::user()->kd_pel)->count();
+    	$jumlah_pesanan = TransaksiDetail::where('kd_pel',Auth::user()->kd_pel)->where('status', 'Sedang diproses')->count();
     	$checkout = User::where('id',$id)->get();
     	return view('home.editcheckout',['checkout' => $checkout,'jumlah_pesanan'=>$jumlah_pesanan,'harga'=>$harga]);
     }
